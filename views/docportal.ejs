@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>docportal</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="c3.css">
+</head>
+<body style="background-color:  #071a1f"  class="b">
+<header id="header">
+  <h1 class="h">Doctor portal</h1>
+</header>
+<nav id="navigation">
+  <ul class="u">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Info</a></li>
+    <li><a href="#">Work</a></li>
+    <li><a href="#">Blog</a></li>
+  </ul>
+</nav>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>patient Name</th>
+      <th>phone no</th>
+      <th>Symptoms</th>
+      <th>Department</th>
+      <th>Gender</th>
+      <th>Bill</th>
+      <th>update names</th>
+    </tr>
+  </thead>
+<% for(var i=0;i<result.length;i++){%>
+  <tbody>
+    <tr>
+      <th scope="row"><%=i%></th>
+      <td><%=result[i].patname%></td>
+      <td><%=result[i].phno%></td>
+      <td><%=result[i].symptoms%></td>
+      <td><%=result[i].dept%></td>
+      <td><%=result[i].gen%></td>
+      <td><a href="/bill">bill</a></td>
+      <form method="get" action="/updatepost/<%= result[i].id%>">
+      <td><input type="text" name="updatename" style="color: black"></td>
+      <td><button type="submit" class="btn btn-primary btn-sm  ">change</button></td>
+      </form>
+      <td><a href="/deletepost/<%= result[i].id%>"><button type="submit"  class="btn btn-primary btn-sm  ">delete</button></a></td>
+    </tr>
+  </tbody>
+  <%}%>
+</table>
+
+</body>
+</html>

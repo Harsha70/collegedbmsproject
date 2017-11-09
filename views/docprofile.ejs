@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>docprofiles</title>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="c3.css">
+</head>
+<body>
+
+<div id="abc">
+<div class="row">
+<P><h3 style=" text-align:center">all doctors</h3></P>
+<% for(var i=0;i<result.length;i++){%>
+	<div class="col-xs-18 col-sm-6 col-md-3">
+	<img class="im" src="http://dhiglobal.com/wp-content/uploads/2016/07/placeholder.jpg"><br>
+	<b>Name:dr.<%=result[i].doctorname%></b>
+	<li>id:<%=result[i].doctorid%></li>
+	<li>Speciallist:<%=result[i].Specialist%></li>
+	<li><a href="/personal/<%=result[i].doctorname%>" type="submit" role="button" style="padding: 1px 1px">personal Profile</a></li>
+   <li> <a href="/remove/<%=result[i].doctorname%>" type="submit" role="button" style="padding: 1px 1px">delete</a></li>
+	</div>
+	<%}%>	
+</div>
+</div>
+
+</body>
+</html>

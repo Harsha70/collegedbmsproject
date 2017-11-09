@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>docHome</title>
+  
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+  <!--<link rel="stylesheet" type="text/css" href="c3.css">-->
+  <link rel="stylesheet" type="text/css" href="c2.css">
+
+</head>
+
+
+<body>
+<nav class="navbar navbar-inverse">
+<div class="row">
+  <div class="col-xs-18 col-sm-6 col-md-5">
+  <!--<ul class="nav nav-pills">
+    <li role="presentation"><a href="#">Home</a></li>
+    <li role="presentation"><a href="#">Login</a></li>
+    <li role="presentation"><a href="#">Messages</a></li>
+  </ul>-->
+  <h4 style="color: white">doctorlogin</h4>
+  </div>
+  <div class="col-xs-18 col-sm-6 col-md-7">
+<form class="f" method="get" action="/docloginsubmit">
+  <div class="form-group f1">
+  <label for="exampleInputEmail1" style="color: white">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1"  name="email" placeholder="Email" required>
+      <!--<label for="Name" style="color: white">Name:</label>--><!--class="glyphicon glyphicon-search" rel="tooltip" title="email"-->
+    
+      <!--<input type="text" class="form-control" id="Name" name="name" placeholder="name " required>-->
+      <!--label for="email" class="glyphicon glyphicon-search" rel="tooltip" title="email"--><!--/label-->
+      
+  </div>
+  <div class="form-group f1">
+        <label for="exampleInputPassword1" style="color: white">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" name="pwd" placeholder="Password" required>
+        <!--<input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="Password" required>-->
+  </div>
+  <input type="submit" class="btn btn-default p" style="background-color: #4267b2;color: white;border-color:#4267b2"></input>
+</form>
+  </div>
+</div>
+</nav>
+
+
+
+
+<div class="row">
+  <div class="col-md-7 l"> 
+
+  </div>
+  <div class="col-md-5 r">
+    <form method="get" action="/docsubmit">
+    <p>create an account</p>
+     <div class="form-group">
+    <label for="doctorid">doctorid:</label>
+    <input type="text" class="form-control" id="doctorid" name="doctorid" placeholder="EX:123" required>
+  </div>
+  <div class="form-group">
+    <label for="Firstname">Name:</label>
+    <input type="text" class="form-control" id="Firstname" name="firstname" placeholder="EX:Harsha" required>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1"  name="email" placeholder="Email" required>
+  </div>
+  <div class="form-group">
+    <label for="Firstname">Username:</label>
+    <input type="text" class="form-control" id="Firstname" name="username" placeholder="EX:Harsha" required>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" name="pwd" placeholder="Password" required>
+  </div>
+  
+  <button type="submit" class="btn btn-primary btn-lg btn-block login-button">Register</button>
+</form>
+  </div>
+</div>
+
+
+
+<div id="footer">
+<ul>
+    <li><a href="">About Histroyden</a></li>
+    <li><a href="">inspired by fb</a></li>
+    <li><a href="">Help</a></li>
+    <li><a href="">Contact us</a></li>
+  </ul>
+  &copy;2017  collegebook.com. All Rights Reserved.
+</div>
+
+
+</body>
+
+<!--<body style="background-color: white">
+<div class="title">
+  <h1 align="center">Hospital management system</h1>  
+</div>
+
+
+<div  class="form f1">
+<h3>Admin</h3>
+<form method="get" action="/signupsubmit">
+  <div class="form-group">
+    <label for="Firstname">Name:</label>
+    <input type="text" class="form-control" id="Firstname" name="firstname" placeholder="EX:Harsha" required>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1"  name="email" placeholder="Email" required>
+  </div>
+  <div class="form-group">
+    <label for="Firstname">Username:</label>
+    <input type="text" class="form-control" id="Firstname" name="username" placeholder="EX:Harsha" required>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" name="pwd" placeholder="Password" required>
+  </div>
+  
+  <button type="submit" class="btn btn-primary btn-lg btn-block login-button">Register</button>
+  <h6 align="center">Already a user</h6> 
+
+</form>
+<a href="/login"><button type="submit" class="btn btn-primary btn-lg btn-block login-button">login</button></a>
+</div>
+
+
+<div  class="form">
+<h3>Doctor</h3>
+<form method="get" action="/docsubmit">
+  <div class="form-group">
+    <label for="Firstname">Name:</label>
+    <input type="text" class="form-control" id="Firstname" name="firstname" placeholder="EX:Harsha" required>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1"  name="email" placeholder="Email" required>
+  </div>
+  <div class="form-group">
+    <label for="Firstname">Username:</label>
+    <input type="text" class="form-control" id="Firstname" name="username" placeholder="EX:Harsha" required>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" name="pwd" placeholder="Password" required>
+  </div>
+  
+  <button type="submit" class="btn btn-primary btn-lg btn-block login-button">Register</button>
+  <h6 align="center">Already a user</h6> 
+
+</form>
+<a href="/doctorlogin"><button type="submit" class="btn btn-primary btn-lg btn-block login-button">login</button></a>
+</div>
+</body>-->
+</html>

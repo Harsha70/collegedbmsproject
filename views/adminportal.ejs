@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>admin portal</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="c3.css">
+</head>
+<body class="b">
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="row">
+    	<div class="col-md-2 ">
+    		<a href="/viewdoctor">view all doctor</a>
+    	</div>
+    	<div class="col-md-2 ">
+    		<a href="#Add patient" onclick="show()">Add patient</a>
+    	</div>
+    	<div class="col-md-2 ">
+    		<a href="/viewpatient">View all patient</a>
+    	</div>
+    	<div class="col-md-2 ">
+    		<a href="#Discharge patient">Discharge patient</a>
+    	</div>
+    	<div class="col-md-2">
+    		<a href="/">logout</a>
+    	</div>
+    </div>
+  </div>
+</nav><br><br>
+
+<div class="row">
+    	<div class="col-md-7 ">
+    		<img src="http://media.gettyimages.com/photos/hospital-picture-id182172308?s=170667a">
+    	</div>
+    	<div class="col-md-5 ">
+<form class="ad" method="get" action="/same">
+<a name="Add doctor"><h2>Add doctor</h2></a>
+  <div class="form-group">
+    <label for="doctorid">doctor id</label>
+    <input type="number" class="form-control" id="doctorid" name="doctorid" placeholder="id" required>
+  </div>
+  <div class="form-group">
+    <label for="doctorname">name</label>
+    <input type="text" class="form-control" id="doctorname" name="doctorname" placeholder="name" required>
+  </div>
+  <div class="form-group">
+    <label for="Address">Address</label>
+    <input type="text" class="form-control" id="doctoraddress" name="doctoraddress" placeholder="address" required>
+  </div>
+  <div class="form-group">
+  	<label for="Specialist in">Specialist in</label>
+  	<input type="text" class="form-control" id="Specialist" name="Specialist" placeholder="Ex:cse fever" required>
+  </div>
+  
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+    	</div>
+</div>
+
+
+<div class="row">
+<div class="col-md-4">
+<div id="pat">
+<form method="get" action="/samepage">
+<div class="form-group">
+    <label for="patientid">patient id</label>
+    <input type="text" class="form-control" id="" name="patientid" placeholder="Ex:123" required>
+  </div>
+  <div class="form-group">
+    <label for="patientname">patient name</label>
+    <input type="text" class="form-control" id="" name="patientname" placeholder="Ex:xyz" required>
+  </div>
+    <div class="form-group">
+    <label for="Address">Address</label>
+    <input type="text" class="form-control" id="patientaddress" name="patientaddress" placeholder="address" required>
+  </div>
+  <div class="form-group">
+    <label for="roomno">room</label>
+    <input type="number" class="form-control" id="roomno" name="roomno" placeholder="roomno" required>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+</div>
+
+<div class="col-md-8">
+<table class="table" style="color: black">
+  <thead class="thead-inverse">
+    <tr>
+      <th>Patient id</th>
+      <th>Patient Name</th>
+      <th>Address</th>
+      <th>Roomno</th>
+      <th>billing</th>
+    </tr>
+  </thead>
+  <% for(var i=0;i<result.length;i++){%>
+  <tbody>
+    <tr>
+      <th scope="row"><%=result[i].patientid%></th>
+      <td><%=result[i].patientname%></td>
+      <td><%=result[i].patientaddress%></td>
+      <td><%=result[i].roomno%></td>
+      <td><a href="/bill">bill</a></td>
+      <form method="get" action="/updatepat/<%= result[i].patientid%>">
+      <td><input type="text" name="updatename" style="color: black"></td>
+      <td><button type="submit" class="btn btn-primary btn-sm  ">change</button></td>
+      </form>
+      <td><a href="/deletepat/<%= result[i].patientid%>"><button type="submit"  class="btn btn-primary btn-sm  ">delete</button></a></td>
+    </tr>
+  </tbody>
+  <%}%>
+  <%=result=result.length%>
+</table>
+</div>
+</div>
+
+<script type="text/javascript">
+	/*function docdetails(){[onclick="docdetails()"]
+		alert("docter is added");
+	}*/
+	function show(){
+		var x=document.getElementById('pat');
+	if (x.style.display == 'none') {
+        x.style.display = 'block';
+    } else {
+        x.style.display = 'none';
+    }
+	}
+
+</script>
+</body>
+</html>
